@@ -43,7 +43,11 @@ nav a {
 }
 nav a:hover { text-decoration: underline; }
 
-.glass { background: rgba(255, 255, 255, 0.2); /* 반투명 */ backdrop-filter: blur(10px); /* 흐림 효과 */ border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); padding: 20px; margin: 10px; transition: transform 1.3s ease; }
+.glass { background: rgba(255, 255, 255, 0.2);
+  /* 반투명 */ backdrop-filter: blur(10px); /* 흐림 효과 */
+   border-radius: 15px; border: 1px solid rgba(255,255,255,0.3);
+    padding: 20px; margin: 10px; transition: transform 1.3s ease;
+  }
 
 .container {
   max-width: 900px;
