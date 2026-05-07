@@ -3,14 +3,22 @@
    원하는 색상 코드로 아래 4가지만 바꿔보세요.
    ------------------------------------------------------------- */
 :root {
-  --primary: #1e5bb8;      /* 메인 포인트 색상 */
-  --primary-dark: #194c98; /* 호버/진한 포인트 */
-  --bg: #f7f9fc;           /* 전체 배경 색 */
-  --text: #222222;         /* 본문 글자 색 */
+  --primary: #1e5bb8;
+  /* 메인 포인트 색상 */
+  --primary-dark: #194c98;
+  /* 호버/진한 포인트 */
+  --bg: #f7f9fc;
+  /* 전체 배경 색 */
+  --text: #222222;
+  /* 본문 글자 색 */
 }
+
 /* ============================================================= */
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
@@ -25,40 +33,72 @@ header {
   background: var(--primary);
   color: rgb(230, 230, 64);
 }
-header .subtitle { margin-top: .25rem; opacity: .95; }
+
+header .subtitle {
+  margin-top: .25rem;
+  opacity: .95;
+}
 
 /* 헤더 정렬 (제목 + 버튼 양쪽 배치) */
 .header-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
 }
 
 /* 다크모드 버튼 스타일 */
 #darkBtn {
-    background: rgba(255,255,255,0.3);
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
+  position: fixed;
+  /* 화면상 고정 위치 설정 */
+  top: 20px;
+  /* 상단에서 20px 떨어짐 */
+  right: 20px;
+  /* 오른쪽에서 20px 떨어짐 */
+  z-index: 1000;
+  /* 다른 요소들보다 위에 보이도록 설정 */
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 /* 전체 배경 */
 body.dark {
-    background: linear-gradient(135deg, #232526, #414345);
-    color: white;
+  background: linear-gradient(135deg, #232526, #414345);
+  color: black;
+}
+
+/* 다크모드 상태 */
+body.dark label {
+    color: #e0e0e0; /* 라벨을 밝은 회색으로 */
+}
+body.dark input {
+    background-color:  rgba(255, 255, 255, 0.4);   /* 입력창 배경을 어둡게 */
+    color: black;             /* 입력하는 글자색을 하얗게 */
+    border: 1px solid #555;   /* 테두리도 너무 튀지 않게 조정 */
+}
+
+body.dark textarea {
+    background-color:  rgba(255, 255, 255, 0.4);   /* 입력창 배경을 어둡게 */
+    color: black;             /* 입력하는 글자색을 하얗게 */
+    border: 1px solid #555;   /* 테두리도 너무 튀지 않게 조정 */
 }
 
 /* 카드 스타일 */
 body.dark .glass {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* 버튼 색 */
 body.dark button {
-    background: #333;
-    color: white;
+  background: #333;
+  color: white;
+}
+
+nav.dark {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 nav {
@@ -69,18 +109,28 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 nav a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   padding: .25rem .5rem;
 }
-nav a:hover { text-decoration: none; }
 
-.glass { background: rgba(255, 255, 255, 0.2); /* 반투명 */ 
-  backdrop-filter: blur(10px); /* 흐림 효과 */
-  border-radius: 15px; border: 1px solid rgba(255,255,255,0.3);
-  padding: 20px; margin: 5px; transition: transform 1.3s ease;
+nav a:hover {
+  text-decoration: none;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  /* 반투명 */
+  backdrop-filter: blur(10px);
+  /* 흐림 효과 */
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  margin: 5px;
+  transition: transform 1.3s ease;
 }
 
 .glass:hover {
@@ -91,13 +141,22 @@ nav a:hover { text-decoration: none; }
   max-width: 900px;
   margin: 1.5rem auto;
   padding: 1rem;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  /* 흐림 효과 */
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
 }
 
-section { margin-bottom: 1rem; }
-h1, h2, h3 { margin: .2rem 0 .6rem; }
+section {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: .2rem 0 .6rem;
+}
 
 .contact-form {
   display: grid;
@@ -105,13 +164,16 @@ h1, h2, h3 { margin: .2rem 0 .6rem; }
   gap: .5rem;
   margin-top: 1rem;
 }
-input, textarea {
+
+input,
+textarea {
   width: 100%;
   padding: .6rem;
   border: 1px solid #ddd;
   border-radius: 6px;
   font: inherit;
 }
+
 button {
   padding: .6rem .8rem;
   border: none;
@@ -121,7 +183,10 @@ button {
   cursor: pointer;
   font-weight: 600;
 }
-button:hover { background: var(--primary-dark); }
+
+button:hover {
+  background: var(--primary-dark);
+}
 
 footer {
   text-align: center;
@@ -130,6 +195,12 @@ footer {
 }
 
 @media (max-width: 600px) {
-  header h1 { font-size: 1.25rem; }
-  .container { margin: 1rem; padding: .75rem; }
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  .container {
+    margin: 1rem;
+    padding: .75rem;
+  }
 }
