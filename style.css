@@ -69,6 +69,16 @@ body.dark {
   color: black;
 }
 
+body.dark header {
+  background: linear-gradient(135deg, #1b1c1e, #2e2e31);
+  color: rgb(230, 230, 64);
+}
+
+body.dark nav {
+  background: linear-gradient(135deg, #303133, #313333);
+  color: black;
+}
+
 /* 다크모드 상태 */
 body.dark label {
     color: #e0e0e0; /* 라벨을 밝은 회색으로 */
