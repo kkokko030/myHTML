@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 1: DOM 스타일 변환기</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* body {
+            font-family: 'Noto Sans KR', sans-serif;
+            text-align: center;
+            padding: 50px;
+        } */
+        /* 타겟 문장 기본 스타일 */
+        #target {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            border: 2px solid #c0b8b8;
+            margin: 20px auto;
+            width: 80%;
+            background-color: white;
+            transition: all 0.3s; /* 부드러운 전환 효과 */
+        }
+        
+    </style>
+    <script>
+        // 1. 글자색 변경 함수
+        function changeColor() {
+            var obj = document.getElementById("target");
+            if (obj.style.color == "red") {
+                obj.style.color = "black";
+            }
+            else {
+                obj.style.color = "red";
+            }
+        }
+
+        // 2. 글자 크기 변경 함수 (32px)
+        function changeSize() {
+            var obj = document.getElementById("target");
+            if (obj.style.fontSize == "32px") {
+                obj.style.fontSize = "20px";
+            }
+            else {
+                obj.style.fontSize = "32px";
+            }
+
+        }
+
+        // 3. 배경색 변경 함수 (Yellow)
+        function changeBackground() {
+            var obj = document.getElementById("target");
+            if (obj.style.backgroundColor == "yellow") {
+                obj.style.backgroundColor = "white";
+            }
+            else {
+                obj.style.backgroundColor = "yellow";
+            }
+        }
+
+        // 4. 숨기기/보이기 토글 함수
+        function toggleVisibility() {
+            var obj = document.getElementById("target");
+
+            // 현재 display 속성 값을 확인
+            // 주의: 스타일이 인라인으로 설정되지 않은 초기 상태는 빈 문자열("")일 수 있음
+            if (obj.style.display === "none") {
+                obj.style.display = "block";
+            } else {
+                obj.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <button onclick="toggleDarkMode()" id="darkBtn">🌙</button>
+        <h1>이름: 채민기</h1>
+        <p class="subtitle">한 줄 소개: HTML 프로그래머</p>
+    </header>
+    <nav>
+        <a href="index.html" class="glass">Home</a>
+        <a href="about.html" class="glass">About</a>
+        <a href="portfolio.html" class="glass">Portfolio</a>
+        <a href="contact.html" class="glass">Contact</a>
+    </nav>
+    <main class="container">
+        <section>
+            <p id="target">이 문장의 스타일을 바꿔보세요!</p>
+
+            <!-- 제어 버튼들 -->
+            <button onclick="changeColor()">글자색 변경</button>
+            <button onclick="changeSize()">크게 보기</button>
+            <button onclick="changeBackground()">배경 강조</button>
+            <button onclick="toggleVisibility()">숨기기/보이기</button>
+
+        </section>
+    </main>
+    <footer>
+        <small>&copy; <span id="year"></span> 이름: 채민기</small>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
