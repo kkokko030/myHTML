@@ -81,18 +81,26 @@ body.dark nav {
 
 /* 다크모드 상태 */
 body.dark label {
-    color: #e0e0e0; /* 라벨을 밝은 회색으로 */
+  color: #e0e0e0;
+  /* 라벨을 밝은 회색으로 */
 }
+
 body.dark input {
-    background-color:  rgba(255, 255, 255, 0.4);   /* 입력창 배경을 어둡게 */
-    color: black;             /* 입력하는 글자색을 하얗게 */
-    border: 1px solid #555;   /* 테두리도 너무 튀지 않게 조정 */
+  background-color: rgba(255, 255, 255, 0.4);
+  /* 입력창 배경을 어둡게 */
+  color: black;
+  /* 입력하는 글자색을 하얗게 */
+  border: 1px solid #555;
+  /* 테두리도 너무 튀지 않게 조정 */
 }
 
 body.dark textarea {
-    background-color:  rgba(255, 255, 255, 0.4);   /* 입력창 배경을 어둡게 */
-    color: black;             /* 입력하는 글자색을 하얗게 */
-    border: 1px solid #555;   /* 테두리도 너무 튀지 않게 조정 */
+  background-color: rgba(255, 255, 255, 0.4);
+  /* 입력창 배경을 어둡게 */
+  color: black;
+  /* 입력하는 글자색을 하얗게 */
+  border: 1px solid #555;
+  /* 테두리도 너무 튀지 않게 조정 */
 }
 
 /* 카드 스타일 */
@@ -175,7 +183,8 @@ h3 {
   margin-top: 1rem;
 }
 
-input,
+input[type="text"],
+input[type="number"],
 textarea {
   width: 100%;
   padding: .6rem;

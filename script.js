@@ -2,7 +2,7 @@
 (function () {
   var y = document.getElementById('year');
   if (y) { y.textContent = new Date().getFullYear(); }
-});
+})();
 
 function toggleDarkMode() {
     document.body.classList.toggle("dark");
